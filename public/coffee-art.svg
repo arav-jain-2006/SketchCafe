@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 430 340">
+  <defs>
+    <linearGradient id="ceramic" x2=".85" y2="1">
+      <stop stop-color="#fff1ce"/><stop offset="1" stop-color="#bd8351"/>
+    </linearGradient>
+    <linearGradient id="coffee" x2="1" y2="1">
+      <stop stop-color="#c67a41"/><stop offset="1" stop-color="#643321"/>
+    </linearGradient>
+    <pattern id="grid" width="16" height="16" patternUnits="userSpaceOnUse">
+      <path d="M16 0H0v16" fill="none" stroke="#ddeddb" stroke-opacity=".1"/>
+    </pattern>
+  </defs>
+  <path fill="url(#grid)" d="M0 0h430v340H0z"/>
+  <g fill="none" stroke="#d9be89" stroke-opacity=".25">
+    <circle cx="237" cy="169" r="151"/><circle cx="237" cy="169" r="136"/>
+    <path d="M237 7v324M72 169h331" stroke-dasharray="3 8"/>
+    <path d="M81 73h26m-13-13v26m278 166h24m-12-12v24"/>
+  </g>
+  <ellipse cx="247" cy="240" rx="131" ry="31" fill="#051b15" fill-opacity=".6"/>
+  <ellipse cx="224" cy="218" rx="125" ry="53" fill="#ab7448" stroke="#e7c99b" stroke-width="2"/>
+  <ellipse cx="224" cy="212" rx="125" ry="49" fill="url(#ceramic)" stroke="#ffe2af" stroke-width="2"/>
+  <ellipse cx="224" cy="211" rx="102" ry="35" fill="none" stroke="#9f6545" stroke-opacity=".55" stroke-width="2"/>
+  <path d="M284 136c66-42 78 54 9 53" fill="none" stroke="#edc693" stroke-width="16" stroke-linecap="round"/>
+  <path d="M143 134c2 63 25 94 77 94s77-31 81-94" fill="url(#ceramic)" stroke="#f8d9a9" stroke-width="2"/>
+  <ellipse cx="222" cy="131" rx="80" ry="36" fill="#fce1b5" stroke="#fff0d6" stroke-width="2"/>
+  <ellipse cx="222" cy="131" rx="70" ry="28" fill="url(#coffee)" stroke="#a96036" stroke-width="2"/>
+  <path d="M219 149c-5-14-33-20-31-30 2-11 26-4 33 4 8-10 31-16 34-5 2 9-21 17-36 31Z" fill="#f8dfb5"/>
+  <path d="M218 145c4-7 12-10 20-15m-20 11-15-11" fill="none" stroke="#c98556" stroke-width="2" stroke-linecap="round"/>
+  <path d="M198 85c-13-14 17-21 5-40m28 41c-13-14 17-21 5-40" fill="none" stroke="#f4dfb1" stroke-opacity=".72" stroke-width="3" stroke-linecap="round"/>
+  <path d="M90 271c7-9 18-11 22-5s-1 17-10 21c-10 4-16-7-12-16Zm20 18c8-5 17-3 19 3s-7 13-16 13-10-10-3-16Z" fill="#a66f4d" stroke="#d7a27a" stroke-width="1.4"/>
+  <path d="M93 283c3-4 4-11 13-16m6 34c5-1 6-6 13-8" fill="none" stroke="#623a2b" stroke-width="2"/>
+</svg>
