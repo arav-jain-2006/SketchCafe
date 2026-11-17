@@ -8,10 +8,10 @@ test("Read a stored category", t => {
   assert.equal(db.get('SELECT name FROM categories WHERE id=?', categoryId).name, 'Drinks');
 });
 
-// One seeded item is returned.
+// All 52 current cafe items are stored by the SQL seed.
 test("List menu items", t => {
   const { db } = fixture(t);
-  assert.equal(db.all('SELECT * FROM items').length, 1);
+  assert.equal(db.all('SELECT * FROM items').length, 52);
 });
 
 // The stored name becomes Coffee.

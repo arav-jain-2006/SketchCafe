@@ -1,0 +1,100 @@
+Menu update verification: 17 November 2026
+
+✔ Successful payment puts the order in the staff queue (32.2753ms)
+✔ A Ready status creates a pickup notification (10.5456ms)
+✔ A guest cannot open the staff order queue (196.6274ms)
+✔ A staff account cannot open administrator features (300.6871ms)
+✔ Create the application services (13.9715ms)
+✔ Load the demo menu (279.7106ms)
+✔ Load the demo staff account (225.7456ms)
+✔ Update an existing menu without changing saved orders (199.3054ms)
+✔ Preserve menu edits and block old cart items after a restart (177.3495ms)
+✔ Use the configured application clock (4.8419ms)
+✔ Login with valid credentials (281.806ms)
+✔ Login with an incorrect password (223.7606ms)
+✔ Login with empty fields (4.6598ms)
+✔ Login with an unregistered username (97.083ms)
+✔ Login with an inactive account (169.105ms)
+✔ Log out of an account (170.6992ms)
+✔ Add an available item (20.9721ms)
+✔ Add an unavailable item (7.1653ms)
+✔ Update an item quantity (6.7685ms)
+✔ Remove an item (5.0666ms)
+✔ Add an invalid quantity (5.2426ms)
+✔ View an empty cart (5.0588ms)
+✔ View the menu (13.0502ms)
+✔ Search for an item (4.6452ms)
+✔ Search for an item that does not exist (5.9681ms)
+✔ Mark an item sold out (6.8034ms)
+✔ Change an item price (11.5936ms)
+✔ Read a stored category (16.8839ms)
+✔ List menu items (5.8602ms)
+✔ Update a category (5.5085ms)
+✔ Save a transaction (4.8566ms)
+✔ Create a demo payment request (12.4796ms)
+✔ Read a new demo request (4.904ms)
+✔ Simulate payment success (5.5159ms)
+✔ Simulate payment failure (4.7938ms)
+✔ Review a completed order (30.8732ms)
+✔ Review an incomplete order (12.5083ms)
+✔ Submit an invalid rating (10.697ms)
+✔ Send a support request (10.2912ms)
+✔ Send an empty support message (7.412ms)
+✔ Resolve a support request (5.78ms)
+✔ View an empty inbox (25.7278ms)
+✔ Create a payment message (7.1528ms)
+✔ Create a Preparing message (6.9876ms)
+✔ Create a Ready message (6.508ms)
+✔ Place a valid order (19.6303ms)
+✔ Place an order with an empty cart (4.7085ms)
+✔ Place an order with an invalid phone (5.4279ms)
+✔ Track an order (7.508ms)
+✔ Mark a paid order Preparing (9.655ms)
+✔ Start a payment (18.7552ms)
+✔ Verify a successful demo payment (7.6842ms)
+✔ Verify a failed demo payment (6.0581ms)
+✔ Verify a pending payment (6.8794ms)
+✔ View a report with no sales (14.3138ms)
+✔ View total sales (12.1913ms)
+✔ View orders per day (5.3047ms)
+✔ View best-selling items (5.3662ms)
+✔ Validate a mobile number (9.1986ms)
+✔ Reject a short mobile number (6.218ms)
+✔ Trim a text field (3.5349ms)
+✔ Reject a fractional quantity (3.6526ms)
+ℹ tests 62
+ℹ suites 0
+ℹ pass 62
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1648.5197
+
+Browser observation:
+Drinks filter showed the eight approved drinks and prices.
+Search for dosa returned the matching dosa choices.
+An archived Iced Spanish Latte cart line was unavailable and could be removed.
+Masala Dosa INR 63 plus Tea INR 15 produced a cart and saved order total of INR 78.
+Demo payment succeeded and the receipt showed INR 78, status Paid.
+
+Existing local database update:
+52 active items in six categories.
+Orders, order_items and payments were compared unchanged before and after.
+
+SQL seed refactor: 17 November 2026
+Menu data moved from the JavaScript array to src/seed.sql.
+All 62 automated tests passed after the refactor (0 failed, skipped or cancelled).
+Fresh SQL seed: 52 menu items in six categories.
+Repeated seed: admin edits retained and no duplicate items inserted.
+Existing database check: saved orders, lines and payments unchanged.
+Running app restarted; /api/menu returned 52 items and Tea at 1500 paise.
+
+Updated PDF browser cases: 17 November 2026
+TC49: Masala Dosa plus Tea receipt INR 78. Staff advanced Preparing, Ready,
+then Completed. Customer tracking showed Completed and all status messages.
+The active staff queue showed no active paid orders.
+TC51: current-menu Latte INR 70 at 390 x 844; document width 375.
+Cart controls fitted without horizontal overflow or stray 0/null values.
+TC52: full 62-test run includes 58 module, two integration and two security tests.
+

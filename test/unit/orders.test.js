@@ -2,11 +2,11 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { fixture, hasStatus, mobile, customer } from '../support/fixture.js';
 
-// An order is created for INR 299 with Pending Payment status.
+// Two current-menu Lattes create an INR 140 Pending Payment order.
 test("Place a valid order", t => {
   const { place } = fixture(t);
   const order = place();
-  assert.equal(order.total, 29900);
+  assert.equal(order.total, 14000);
   assert.equal(order.status, 'Pending Payment');
 });
 

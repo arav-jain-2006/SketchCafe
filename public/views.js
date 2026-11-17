@@ -18,7 +18,7 @@ export async function menuPage({ state, go }) {
   const error = note('', 'error');
   const cartError = note('', 'error');
   const dialog = el('dialog', { 'aria-label': 'Menu item details' });
-  const search = input('Search the menu', 'q', { type: 'search', placeholder: 'Try latte or pesto' });
+  const search = input('Search the menu', 'q', { type: 'search', placeholder: 'Try dosa, paratha or coffee' });
   const categories = select('Category', 'category', [['', 'All categories'],
     ...initial.categories.map(category => [category.id, category.name])], '');
   let busy = false;
@@ -135,7 +135,7 @@ export async function menuPage({ state, go }) {
     el('section', { class: 'hero' },
       el('div', { class: 'hero-copy' }, el('div', { class: 'kicker' }, 'Café menu · Pickup only'),
         el('h1', {}, 'Good coffee. Easy pickup.'),
-        el('p', {}, 'Order coffee, bakery favourites and lunch from Sketch Café. We’ll let you know when it’s ready.')),
+        el('p', {}, 'Order snacks, dosas, parathas, Chinese favourites and drinks from Sketch Café. We’ll let you know when it’s ready.')),
       el('img', { class: 'hero-art', src: '/coffee-art.svg', alt: '', width: 430, height: 340 })),
     el('div', { class: 'layout' },
       el('div', {}, el('form', { class: 'toolbar card', onsubmit: filter },

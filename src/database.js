@@ -18,6 +18,9 @@ export function openDatabase(path = ':memory:') {
     get: (sql, ...args) => connection.prepare(sql).get(...args),
     all: (sql, ...args) => connection.prepare(sql).all(...args),
     run: (sql, ...args) => connection.prepare(sql).run(...args),
+    // Execute trusted schema/seed SQL only. Business inputs must keep using the
+    // bound-parameter helpers above rather than being interpolated into scripts.
+    exec: sql => connection.exec(sql),
     // Use only synchronous work here. BEGIN IMMEDIATE reserves the write lock before any reads.
     transaction(work) {
       connection.exec('BEGIN IMMEDIATE');

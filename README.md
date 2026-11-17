@@ -23,7 +23,7 @@ Use separate browser profiles, such as a regular window and an incognito window,
 
 ## Demonstrate the product
 
-1. **Guest.** Search for *latte*, open its details, add two and confirm the ₹370.00 cart total. Show the sold-out croissant. Place the pickup order and save the order code.
+1. **Guest.** Browse the Sketch food menu or select Drinks. Search for *latte*, open its details, add two and confirm the ₹140.00 cart total. Place the pickup order and save the order code.
 2. **Payment.** Start demo UPI and simulate failure. Show Pending Payment and the empty staff queue. Retry and simulate success. Show the receipt and the order appearing in the staff queue within its five-second polling interval.
 3. **Staff.** Mark the order Preparing, Ready and Completed. Show the guest's status history and Ready message. Mark an item sold out and reload the guest menu to show the update.
 4. **Guest and admin.** Submit a review after pickup and send a support request. As admin, check sales and best sellers, view the review, and resolve the support request with a reply. Show the reply on the guest's support lookup.
@@ -33,7 +33,13 @@ Use separate browser profiles, such as a regular window and an incognito window,
 npm.cmd test
 ```
 
-The suite contains 60 simple automated tests: 56 module tests, two integration tests and two access-control tests. Three browser checks and a regression rerun are also documented in the [test cases and results](docs/TESTING.md).
+The suite contains 62 simple automated tests: 58 module tests, two integration tests and two access-control tests. This includes checks that the menu update preserves existing orders and later admin edits. Browser checks and the earlier regression run are documented in the [test cases and results](docs/TESTING.md).
+
+## Cafe menu
+
+The menu contains 44 food items from the supplied Sketch Cafe photograph and eight approved drinks: Tea, Black Coffee, Espresso, Cappuccino, Latte, Cold Coffee, Coke and Sprite. Serving-time restrictions are omitted. Food prices follow the photograph; the drink prices were supplied separately. All items start available and staff can mark them sold out.
+
+The initial menu is seeded into `data/sketch.sqlite` from `src/seed.sql`. All menu browsing and changes use database records. A seed-version guard prevents repeated inserts and preserves admin edits on restart. Previous menu items are archived so saved orders keep their original names and prices. Manage the current menu through the administrator screen; the SQL file supplies initial data for a fresh database.
 
 ## Source map
 

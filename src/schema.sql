@@ -77,3 +77,7 @@ CREATE TABLE IF NOT EXISTS demo_gateway (
 );
 CREATE INDEX IF NOT EXISTS orders_created ON orders(created_at);
 CREATE INDEX IF NOT EXISTS payments_verified ON payments(status, verified_at);
+-- Record applied menu data updates so restarting never overwrites admin edits.
+CREATE TABLE IF NOT EXISTS app_settings (
+  key TEXT PRIMARY KEY, value TEXT NOT NULL
+);

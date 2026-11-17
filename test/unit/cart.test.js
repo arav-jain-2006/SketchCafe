@@ -2,12 +2,12 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { fixture, hasStatus } from '../support/fixture.js';
 
-// Item is added with quantity 2 and total INR 299.
+// Two Lattes at INR 70 give a total of INR 140.
 test("Add an available item", t => {
   const { app, itemId } = fixture(t);
   const { cart } = app.cart.change(null, itemId, 2, true);
   assert.equal(cart.lines[0].quantity, 2);
-  assert.equal(cart.total, 29900);
+  assert.equal(cart.total, 14000);
 });
 
 // An error is shown and no item is added.
@@ -18,11 +18,11 @@ test("Add an unavailable item", t => {
   assert.equal(app.cart.view(null).lines.length, 0);
 });
 
-// The cart total becomes INR 448.50.
+// Three Lattes at INR 70 give a total of INR 210.
 test("Update an item quantity", t => {
   const { app, itemId } = fixture(t);
   const { id } = app.cart.change(null, itemId, 1, true);
-  assert.equal(app.cart.change(id, itemId, 3).cart.total, 44850);
+  assert.equal(app.cart.change(id, itemId, 3).cart.total, 21000);
 });
 
 // The item is removed and the total becomes zero.
