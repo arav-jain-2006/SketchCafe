@@ -8,7 +8,9 @@
   },
   "scripts": {
     "start": "node src/server.js",
-    "test": "node --test \"test/unit/*.test.js\"",
-    "test:unit": "node --test \"test/unit/*.test.js\""
+    "test": "node --test \"test/unit/*.test.js\" \"test/integration/*.test.js\" \"test/security/*.test.js\"",
+    "test:unit": "node --test \"test/unit/*.test.js\"",
+    "test:integration": "node --test \"test/integration/*.test.js\"",
+    "test:security": "node --test \"test/security/*.test.js\""
   }
 }

@@ -33,7 +33,7 @@ Use separate browser profiles, such as a regular window and an incognito window,
 npm.cmd test
 ```
 
-The suite contains simple module tests. See the [test cases and results](docs/TESTING.md).
+The suite contains 60 simple automated tests: 56 module tests, two integration tests and two access-control tests. Three browser checks and a regression rerun are also documented in the [test cases and results](docs/TESTING.md).
 
 ## Source map
 
@@ -59,6 +59,6 @@ For a local backup, stop the app cleanly and copy the database file. If taking a
 - [Software Requirements Specification](docs/requirements/SRS%20Document.pdf)
 - [Feasibility study](docs/documents/Sketch%20Cafe%20Feasibility%20Study.docx)
 - [MoSCoW prioritization](docs/documents/Sketch%20Cafe%20MoSCoW%20Prioritization.docx)
-- [Module test cases and results](docs/documents/Sketch%20Cafe%20-%20Module%20Test%20Cases.pdf)
+- [Combined test cases and results](docs/documents/Sketch%20Cafe%20-%20Module%20Test%20Cases.pdf)
 - [State transition diagram](docs/diagrams/State%20Transition%20Diagram.png)
 - [Original UML and data flow diagrams](docs/diagrams)

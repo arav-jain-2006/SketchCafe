@@ -45,7 +45,9 @@ export async function menuPage({ state, go }) {
       cartError,
       cart.lines.length ? el('div', {}, cart.lines.map(line => el('div', { class: 'line stack' },
         el('div', { class: 'row' }, el('strong', {}, line.name), money(line.subtotal)),
-        (!line.available || line.archived) && badge('Unavailable', true),
+        // SQLite returns 0/1 flags. Use a ternary so an available item never
+        // contributes a numeric zero as a visible child of the cart line.
+        (!line.available || line.archived) ? badge('Unavailable', true) : null,
         el('div', { class: 'row' },
           el('input', { class: 'qty', type: 'number', min: 1, max: 99, value: line.quantity,
             disabled: !line.available, 'aria-label': 'Quantity for ' + line.name,
