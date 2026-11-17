@@ -1,16 +1,16 @@
 import { createApp } from '../../src/app.js';
 import { openDatabase } from '../../src/database.js';
 
-export const time = Date.parse('2026-11-10T18:45:00Z');
+const time = Date.parse('2026-11-10T18:45:00Z');
 export const mobile = '9876543210';
 export const customer = { name: 'Asha', phone: mobile };
 export const hasStatus = status => error => error.status === status;
 
 // Each service test owns a fresh database with a known menu and clock.
-export function fixture(t, options = {}) {
+export function fixture(t) {
   const db = openDatabase();
   t.after(() => db.close());
-  const app = createApp(db, { time: () => time, ...options });
+  const app = createApp(db, { time: () => time });
   const categoryId = app.catalog.saveCategory(null, { name: 'Drinks' });
   const itemData = { categoryId, name: 'Mocha', description: 'Dark cocoa', price: 14950, available: true, image: '' };
   const itemId = app.catalog.saveItem(null, itemData);

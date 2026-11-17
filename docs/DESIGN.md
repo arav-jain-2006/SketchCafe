@@ -12,21 +12,21 @@ Priorities are for the course demonstration. The source SRS still describes the 
 
 | ID | SRS | Priority | Demo feature and module | Acceptance or evidence |
 | --- | --- | --- | --- | --- |
-| FR-01 | §3.2.1 | Must | Employee sign-in, sign-out, change password, idle expiration and server-side roles in `auth` and `http` | AC 10–11, auth and HTTP tests |
-| FR-02 | §3.2.2 | Must | Browse, keyword/category search, details and availability in `catalog` | AC 1, catalog and browser checks |
+| FR-01 | §3.2.1 | Must | Employee sign-in, sign-out, change password, idle expiration and server-side roles in `auth` and `http` | AC 10–11, authentication module tests |
+| FR-02 | §3.2.2 | Must | Browse, keyword/category search, details and availability in `catalog` | AC 1, catalog module tests |
 | FR-03 | §3.2.3 | Must | Session cart, quantities, live totals and unavailable-item handling in `cart` | AC 1–2, cart tests |
-| FR-04 | §3.2.4 | Must | Valid guest details, one order per cart, order snapshots in `orders` | AC 3, 8–9, order and HTTP tests |
-| FR-05 | §3.2.5 | Must | Simulated UPI attempts, server verification, failure and retry, receipt in `payments` and `demo-gateway` | AC 4–5 in demo mode, payment and HTTP tests |
-| FR-06 | §3.2.6 | Must | Code plus phone tracking, timestamped history and in-app notification inbox in `orders` and `notifications` | AC 6 in demo mode, status and browser checks |
-| FR-07 | §3.2.7 | Must | Paid-only queue, sequential states and availability updates | AC 7, order and HTTP tests |
+| FR-04 | §3.2.4 | Must | Valid guest details, one order per cart, order snapshots in `orders` | AC 3, 8–9, order module tests |
+| FR-05 | §3.2.5 | Must | Simulated UPI attempts, server verification, failure and retry, receipt in `payments` and `demo-gateway` | AC 4–5 in demo mode, payment module tests |
+| FR-06 | §3.2.6 | Must | Code plus phone tracking, timestamped history and in-app notification inbox in `orders` and `notifications` | AC 6 in demo mode, notification and order module tests |
+| FR-07 | §3.2.7 | Must | Paid-only queue, sequential states and availability updates | AC 7, order module tests |
 | FR-08 | §3.2.8 | Must | Category, item and price management with archived rows and immutable order prices | AC 9, catalog and order tests |
-| FR-09 | §3.2.7, §3.2.9 | Should | Filtered order history, staff management, daily sales and date-range reports | Auth, reports and browser checks |
-| FR-10 | §3.2.9–10 | Should | One review per completed order, support lookup, replies and resolution | AC 12, feedback and HTTP tests |
+| FR-09 | §3.2.7, §3.2.9 | Should | Filtered order history, staff management, daily sales and date-range reports | authentication and reports module tests |
+| FR-10 | §3.2.9–10 | Should | One review per completed order, support lookup, replies and resolution | AC 12, feedback module tests |
 | FR-11 | §3.2.2, §3.2.8 | Could | Optional HTTPS menu image URL | Catalog validation |
 | FR-12 | §3.1, §3.2.5–6 | Won't this iteration | Live UPI, phone notifications and receipt delivery | Needs provider credentials, sandbox and end-to-end provider tests |
-| NFR-01 | §3.3 | Must | Local menu/cart latency and five-second staff refresh | Load check and browser walkthrough |
-| NFR-02 | §3.5 | Must | Password hashing, protected sessions, role boundaries, atomic and repeatable checkout/payment | Unit and HTTP security checks |
-| NFR-03 | §3.5 | Should | Responsive guest pages and SQLite backups | Mobile-width browser check and documented backup procedure |
+| NFR-01 | §3.3 | Must | Local menu/cart latency and five-second staff refresh | Planned performance assessment |
+| NFR-02 | §3.5 | Must | Password hashing, protected sessions, role boundaries, atomic and repeatable checkout/payment | Module validation tests |
+| NFR-03 | §3.5 | Should | Responsive guest pages and SQLite backups | Responsive design and documented backup procedure |
 | NFR-04 | §3.5 | Won't this iteration | Deployed HTTPS, notification-provider handoff within 30 seconds, 95% opening-hours availability | Requires deployment and measurement |
 
 ## Modularity, cohesion and coupling

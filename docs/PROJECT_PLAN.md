@@ -46,6 +46,6 @@ The critical path is **A → B → C → D → E → F → H → I**, with 48 wo
 | --- | --- | --- |
 | End of core ordering | Guest order and verified receipt, failure retry, role checks | Triage blockers before adding features. Keep payment and notification provider decisions in the scope log. |
 | End of operations | Staff queue, valid transitions, timestamped history and Ready message | Compare actual work with the PERT baseline. A slip in F shifts testing unless reserve is used. |
-| Before hand-in | Unit and HTTP suites, browser walkthrough, load result, setup instructions | Re-run acceptance checks after fixes. Record open provider and deployment gaps in the release notes. |
+| Before hand-in | Module test results, manual demonstration and setup instructions | Re-run acceptance checks after fixes. Record open provider and deployment gaps in the release notes. |
 
 Use a weekly tracker with owner, planned finish, actual finish, evidence and blocker. Keep a change log that records the requirement ID and the design and test cases affected by each change.

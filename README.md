@@ -31,17 +31,16 @@ Use separate browser profiles, such as a regular window and an incognito window,
 
 ```powershell
 npm.cmd test
-npm.cmd run test:load
 ```
 
-The load check measures menu/cart reads and cart/checkout writes with 50 concurrent clients on localhost. For separate unit, integration and Chromium runs, see the [test commands and results](docs/TESTING.md).
+The suite contains simple module tests. See the [test cases and results](docs/TESTING.md).
 
 ## Source map
 
 - `src/server.js` starts the app. `src/app.js` wires feature services to a shared SQLite database. `src/http.js` maps HTTP requests and access rules to those services.
 - `src/catalog.js`, `cart.js`, `orders.js`, `payments.js`, `auth.js` and related services each own a feature. `src/schema.sql` enforces database relationships and uniqueness.
 - `public/ui.js` handles navigation and view lifecycles. `views.js` renders guest screens, `team.js` renders staff and admin workspaces, and `components.js` contains shared controls and API requests.
-- `test/unit`, `test/integration` and `browser-tests` contain dedicated test files. Start with the test named after the module you are changing.
+- `test/unit` contains a separate test file for each backend module. Start with the test named after the module you are changing.
 
 ## Design and assessment
 
